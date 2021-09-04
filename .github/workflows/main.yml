@@ -1,0 +1,17 @@
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    name: Test action
+    steps:
+      - name: Create dummy content
+        run: |
+          echo "hello" > test.txt
+
+#      - name: Test action
+#        uses: allenevans/action-rsync@pipeline
+#        with:
+#          src: /
+#          dest: root@<IP_ADDRESS_HERE>:/root
+#          ssh_key: ${{ secrets.TEST_SSH_KEY }}

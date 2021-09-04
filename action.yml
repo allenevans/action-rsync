@@ -6,15 +6,14 @@ inputs:
     description: 'source'
     required: true
   dest:
-    description: 'destination'
+    description: 'destination e.g ssh-user@ssh-host:/path'
     required: true
   options:
     description: 'rsync options'
+    default: -aP
+  ssh_key:
+    description: 'ssh private key'
     required: true
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  args:
-    - ${{ inputs.src }}
-    - ${{ inputs.dest }}
-    - ${{ inputs.options }}
