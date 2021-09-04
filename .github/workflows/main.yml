@@ -1,0 +1,14 @@
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    name: Test action
+    steps:
+      - name: Test action
+        id: hello
+        uses: allenevans/action-rsync@main
+        with:
+          src: the source
+          dest: the dest
+          options: the options
